@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style media="screen">
+    .wrapper{max-width: 1100px;margin:0 auto;padding:10px 15px}
+    body{margin:0;font-family: 'Open Sans', sans-serif;}
+    *{box-sizing: border-box;}
+
+.responsive-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+.responsive-table thead {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.responsive-table thead th {
+  background-color: #eeeeed;
+  border: 1px solid #eeeeed;
+  font-weight: normal;
+  text-align: center;
+  color: #252323;
+}
+.responsive-table thead th:first-of-type {
+  text-align: left;
+}
+.responsive-table tbody,
+.responsive-table tr,
+.responsive-table th,
+.responsive-table td {
+  display: block;
+  padding: 0;
+  text-align: left;
+  white-space: normal;
+}
+.responsive-table th,
+.responsive-table td {
+  padding: .5em;
+  vertical-align: middle;
+}
+.responsive-table caption {
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.responsive-table tfoot {
+  font-size: .8em;
+  font-style: italic;
+}
+.responsive-table tbody tr {
+  margin-bottom: 1em;
+  border: 2px solid #1d96b2;
+}
+.responsive-table tbody tr:last-of-type {
+  margin-bottom: 0;
+}
+.responsive-table tbody th[scope="row"] {
+  background-color: #1d96b2;
+  color: white;
+}
+.responsive-table tbody td[data-type=qty] {
+  text-align: right;
+}
+.responsive-table tbody td[data-title]:before {
+  content: attr(data-title);
+  float: left;
+  font-size: .8em;
+  color: rgba(94, 93, 82, 0.75);
+}
+.responsive-table tbody td {
+  text-align: right;
+  /* border-bottom: 1px solid #1d96b2; */
+}
+
+
+@media (min-width: 52em) {
+  .responsive-table {
+    font-size: .9em;
+  }
+  .responsive-table thead {
+    position: relative;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+  }
+  .responsive-table tr {
+    display: table-row;
+  }
+  .responsive-table th,
+  .responsive-table td {
+    display: table-cell;
+    padding: .5em;
+  }
+
+  .responsive-table caption {
+    font-size: 1.5em;
+  }
+  .responsive-table tbody {
+    display: table-row-group;
+  }
+  .responsive-table tbody tr {
+    display: table-row;
+    border-width: 1px;
+  }
+  .responsive-table tbody tr:nth-of-type(even) {
+    background-color: rgba(94, 93, 82, 0.1);
+  }
+  .responsive-table tbody th[scope="row"] {
+    background-color: transparent;
+    color: #5e5d52;
+    text-align: left;
+  }
+  .responsive-table tbody td {
+    text-align: center;
+  }
+  .responsive-table tbody td[data-title]:before {
+    content: none;
+  }
+}
+@media (min-width: 62em) {
+  .responsive-table {
+    font-size: 1em;
+  }
+  .responsive-table th,
+  .responsive-table td {
+    padding: .75em .5em;
+  }
+  .responsive-table tfoot {
+    font-size: .9em;
+  }
+}
+
+@media (min-width: 75em) {
+  .responsive-table th,
+  .responsive-table td {
+    padding: .75em;
+  }
+}
+.form-group{display: inline-block;width:100%;padding: 15px 0;}
+input{width: 100%;padding:10px 5px}
+label{padding: 15px 0;
+     display: inherit;}
+     button{display: inline-block;
+    min-width: 100px;
+    padding: 9px 9px;
+    background-color: teal;
+    border: 2px solid teal;
+    color: #fff;
+    cursor: pointer;}
+    button:hover{background-color: #0a6969;
+    border: 2px solid #008c8c;
+    color: #fff;
+    transition: 0.3s ease;}
+    </style>
+  </head>
+  <body>
+ <div class="wrapper">
+   <div class="">
+     <h3>Add order line item, order no: DA1233223</h3>
+     <hr/>
+   </div>
+   <div class="" style="display:flex">
+     <div class="form-group">
+       <label for="">Inventry Location</label>
+       <div class=""  style="padding-right:15px">
+       <input type="text" name="" value="">
+     </div>
+     </div>
+     <div class="form-group">
+       <div class=""  style="padding-left:15px">
+         <label for="">Customer Adress</label>
+        <input type="text" name="" value="">
+       </div>
+
+     </div>
+   </div>
+    <table class="responsive-table">
+      <!-- <caption> Table</caption> -->
+      <thead>
+        <tr>
+          <th scope="col">Item Name</th>
+          <th scope="col">Variant Name</th>
+          <th scope="col">Order No.</th>
+          <th scope="col">Ordered Qty</th>
+          <th scope="col">Shiped Qty</th>
+          <th scope="col">Qty Instock</th>
+          <th scope="col">Shipment Qty</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">T-Shirt</th>
+          <td data-title="Variant Name">Color:Blue</td>
+          <td data-title="order">RAS4554345</td>
+          <td data-title="Ordered Qty" data-type="qty">10</td>
+          <td data-title="Shiped Qty" data-type="qty">123</td>
+          <td data-title="Qty Instock" data-type="qty">230</td>
+          <td data-title="Shipment Qty" data-type="qty">100</td>
+        </tr>
+        <tr>
+          <th scope="row">T-Shirt</th>
+          <td data-title="Variant Name">Color:Blue</td>
+          <td data-title="order">RAS4554345</td>
+          <td data-title="Ordered Qty" data-type="qty">13</td>
+          <td data-title="Shiped Qty" data-type="qty">124</td>
+          <td data-title="Qty Instock" data-type="qty">23</td>
+          <td data-title="Shipment Qty" data-type="qty">10</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" name="button">Submit</button>
+</div>
+
+  </body>
+</html>
